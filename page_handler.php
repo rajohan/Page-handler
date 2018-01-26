@@ -1,6 +1,6 @@
 <?php 
     ###########################################################################
-    # Page handler. Include the correct page and set active button
+    # Page handler. Include the correct page and set active button.
     ###########################################################################
     class Page_handler {
 
