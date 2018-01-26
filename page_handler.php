@@ -1,4 +1,5 @@
 <?php 
+
     ###########################################################################
     # Page handler. Include the correct page and set active button.
     ###########################################################################
@@ -12,8 +13,14 @@
             // Array containing allowed pages
             $this->allowed_pages = array(
 
-                'home' => 'landing_page.php', 
-                'about' => 'about.php'
+                'home'     => 'landing_page.php', 
+                'about'    => 'about.php',
+                'services' => 'services.php',
+                'projects' => 'projects.php',
+                'blog'     => 'blog.php',
+                'contact'  => 'contact.php',
+                'legal'    => 'legal.php',
+                'sitemap'  => 'sitemap.php'
 
             );
 
@@ -35,6 +42,23 @@
 
             return array_key_exists($this->page, $this->allowed_pages);
             
+        }
+        
+        // Metod to generate page title
+        function page_title() {
+
+            if($this->valid_page()) {
+
+                $title = $GLOBALS['page_title']." - ".ucfirst($this->page);
+
+            } else {
+
+                $title = $GLOBALS['page_title'];
+
+            }
+
+            echo $title;
+
         }
 
         // Metod to include the correct page
@@ -64,4 +88,5 @@
         }
 
     }
+
 ?>
