@@ -7,6 +7,7 @@
         
         private $allowed_pages;
         private $page;
+        
         function __construct() {
             
             // Array containing allowed pages
